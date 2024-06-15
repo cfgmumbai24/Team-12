@@ -1,208 +1,139 @@
-/* styles/HomePage.css */
 .home-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #FFFBEA; /* Light peach background */
-}
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: antiquewhite;
+  }
+  
+  header {
+    background-color: #faa974;
+    padding: 10px 0;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .navbar h1 {
+    color: white;
+    margin: 0;
+  }
+  
+  .nav-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .nav-btn {
+    background-color: white;
+    color: #f5995c;
+    padding: 10px 20px;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .nav-btn:hover {
+    background-color: #45a049;
+    color: white;
+  }
+  
+  .apply-section, .workshop-section, .opportunities-section {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  .apply-section h2, .workshop-section h2, .opportunities-section h2 {
+    margin-top: 0;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input[type="email"],
+  .form-group input[type="text"],
+  .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .btn {
+    background-color: rgb(98, 28, 28);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .btn:hover {
+    background-color: #f38028;
+  }
 
-.home-page h1 {
-  font-size: 3rem;
-  margin-bottom: 2rem;
-  color: #333;
-}
-
-.home-page div {
-  display: flex;
-  gap: 1rem;
-}
-
-.home-page button {
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  background-color: #F4D95B; /* Button color */
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.home-page button:hover {
-  background-color: #EFC814; /* Hover color */
-}
-
-/* Global Styles */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #FFFBEA; /* Light peach background for the entire page */
-  color: #333;
-}
-
-/* Layout Styles */
-.layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.header {
-  background-color: #F4D95B; /* Peach color */
-  color: white;
-  padding: 20px;
-  text-align: center;
-  font-size: 2em;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.content {
-  flex: 1;
-  padding: 20px;
-  background-color: #FCF3C6; /* Slightly lighter peach for content area */
-  border-top: 2px solid #F4D95B;
-  border-bottom: 2px solid #F4D95B;
-}
-
-.footer {
-  background-color: #FAEAA3; /* Even lighter peach for footer */
-  padding: 10px;
-  text-align: center;
-  border-top: 1px solid #F4D95B;
-  font-size: 0.9em;
-}
-
-.footer a {
-  color: #F4D95B;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-/* Form Styles */
-form {
-  background-color: #fff;
-  padding: 20px;
-  border: 1px solid #F4D95B;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
-
-input, select {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button.primary {
-  background-color: #F4D95B; /* Peach color for primary buttons */
-  color: white;
-}
-
-button.primary:hover {
-  background-color: #EFC814; /* Darker peach on hover */
-}
-
-button.danger {
-  background-color: #FF5252; /* Red for danger buttons */
-  color: white;
-}
-
-button.danger:hover {
-  background-color: #FF1744; /* Darker red on hover */
-}
-
-button.light {
-  background-color: #FAEAA3; /* Light peach for light buttons */
-  color: #333;
-}
-
-button.light:hover {
-  background-color: #F4D95B; /* Darker light peach on hover */
-}
-
-/* Dashboard Page Styles */
-.dashboard-page {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-}
-
-.dashboard-page h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.dashboard-page div {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.dashboard-page button {
-  margin: 10px;
-  flex: 1 1 30%;
-  max-width: 200px;
-}
-
-/* Specific Dashboard Headers */
-.admin-dashboard h2, 
-.mentor-dashboard h2, 
-.student-dashboard h2 {
-  color: #F4D95B; /* Heading color for dashboards */
-}
-
-/* Login Form Styles */
-.login-form {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #F4D95B;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.login-form h1 {
-  margin-bottom: 20px;
-}
-
-.login-form input {
-  width: calc(100% - 20px);
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.login-form button {
-  width: 100%;
-  padding: 10px;
-  background-color: #F4D95B;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.login-form button:hover {
-  background-color: #EFC814;
-}
-
-.error {
-  color: red;
-  margin-bottom: 10px;
-}
+  .intro{
+    font-size: 100px;
+    color: rgb(98, 28, 28);
+  }
+  
+  .workshops {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .workshop {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .opportunities {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .opportunity {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+  }
+  
+  .opportunity h3 {
+    margin-top: 0;
+  }
+  
+  .opportunity p {
+    margin-bottom: 10px;
+  }
+  
+  .full-description {
+    margin-top: 10px;
+  }
+  
