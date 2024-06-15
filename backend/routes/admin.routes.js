@@ -7,6 +7,8 @@ import {
   verifyStudent,
   mentorSuggestions,
   getUnverifiedStudents,
+  getUnmatchedStudents,
+  matchStudent,
 } from "../controllers/admin.controllers.js";
 
 const router = express.Router();
@@ -18,5 +20,7 @@ router.get("/getUnverifiedStudents", getUnverifiedStudents);
 router.get("/getStudents/:courseName", getStudent);
 router.post("/addCourse", addCourse);
 router.get("/mentorSuggestions/:studentId", mentorSuggestions);
+router.get("/getUnmatchedStudents", getUnmatchedStudents);
+router.put("/matchStudent/:studentId/:mentorId", matchStudent);
 
 export default router;
