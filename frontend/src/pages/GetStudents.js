@@ -1,6 +1,4 @@
-// GetStudents.js
 import React, { useState, useEffect } from 'react';
-import Typography from '@material-ui/core/Typography';
 
 const GetStudents = () => {
   const [students, setStudents] = useState([]);
@@ -17,12 +15,10 @@ const GetStudents = () => {
 
   return (
     <div>
-      <Typography variant="h4" gutterBottom>
-        Students List
-      </Typography>
+      <h4>Students List</h4>
       {students.map((student) => (
         <div key={student.id}>
-          <Typography variant="subtitle1">{student.name}</Typography>
+          <p>{student.name}</p>
           {/* Display more student information as needed */}
         </div>
       ))}

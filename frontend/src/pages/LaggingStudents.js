@@ -1,6 +1,6 @@
 // LaggingStudents.js
 import React, { useState, useEffect } from 'react';
-import Typography from '@material-ui/core/Typography';
+import Typography from '@mui/material/Typography';
 
 const LaggingStudents = () => {
   const [laggingStudents, setLaggingStudents] = useState([]);

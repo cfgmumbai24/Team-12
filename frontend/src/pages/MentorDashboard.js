@@ -1,25 +1,22 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Container, Typography } from '@mui/material';
 
 const MentorDashboard = () => {
   const navigate = useNavigate();
 
   return (
-    <Container maxWidth="md">
-      <Typography variant="h4" gutterBottom>
-        Welcome, Mentor
-      </Typography>
-      <Button variant="contained" color="primary" onClick={() => navigate('/get-students')}>
+    <div>
+      <h1>Welcome, Mentor</h1>
+      <button style={{ margin: '10px', padding: '5px 10px', backgroundColor: '#1976d2', color: '#fff', border: 'none', cursor: 'pointer' }} onClick={() => navigate('/get-students')}>
         Get Students
-      </Button>
-      <Button variant="contained" color="secondary" onClick={() => navigate('/lagging-students')}>
+      </button>
+      <button style={{ margin: '10px', padding: '5px 10px', backgroundColor: '#f44336', color: '#fff', border: 'none', cursor: 'pointer' }} onClick={() => navigate('/lagging-students')}>
         Lagging Students
-      </Button>
-      <Button variant="contained" color="default" onClick={() => navigate('/update-marks')}>
+      </button>
+      <button style={{ margin: '10px', padding: '5px 10px', backgroundColor: '#e0e0e0', color: '#000', border: 'none', cursor: 'pointer' }} onClick={() => navigate('/update-marks')}>
         Update Marks
-      </Button>
-    </Container>
+      </button>
+    </div>
   );
 };
 

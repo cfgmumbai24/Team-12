@@ -1,32 +1,22 @@
+// App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
-import StudentDashboard from './pages/StudentDashboard';
-import NewApplicationPage from './pages/NewApplicationPage';
-import ExistingApplicationsPage from './pages/ExistingApplicationsPage';
-import CoursesPage from './pages/CoursesPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MentorDashboard from './pages/MentorDashboard';
-import StudentDetailsPage from './pages/StudentDetailsPage';
-import LaggingStudentsPage from './pages/LaggingStudentsPage';
-import UpdateMarksPage from './pages/UpdateMarksPage';
+import GetStudents from './pages/GetStudents';
+import LaggingStudents from './pages/LaggingStudents';
+import UpdateMarks from './pages/UpdateMarks';
+import HomePage from './pages/HomePage';
+import Login from './pages/Login';
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/dashboard" element={<StudentDashboard />} />
-        <Route path="/new-application" element={<NewApplicationPage />} />
-        <Route path="/existing-applications" element={<ExistingApplicationsPage />} />
-        <Route path="/courses" element={<CoursesPage />} />
-        <Route path="/mentor-dashboard" element={<MentorDashboard />} />
-        <Route path="/students/:id" element={<StudentDetailsPage />} />
-        <Route path="/lagging-students" element={<LaggingStudentsPage />} />
-        <Route path="/update-marks" element={<UpdateMarksPage />} />
+        <Route path = "/" element= {<Login />} />
+        <Route path="/get-students" element={<GetStudents />} />
+        <Route path="/lagging-students" element={<LaggingStudents />} />
+        <Route path="/update-marks" element={<UpdateMarks />} />
+        <Route path="/dashboard" element={<MentorDashboard />} />
       </Routes>
     </Router>
   );
