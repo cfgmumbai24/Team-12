@@ -1,15 +1,26 @@
 import React, { useState, useEffect } from 'react';
+import Typography from '@mui/material/Typography';
+import axios from "axios";
 
 const LaggingStudents = () => {
   const [laggingStudents, setLaggingStudents] = useState([]);
 
+  const getLaggingStudents = async () => {
+    try {
+      const params = {
+        id: localStorage.getItem("mentorId"),
+      }
+      const res = await axios.get("http://localhost:8080/mentor/getLaggingStudents", {
+        params
+      });
+      setLaggingStudents(res.data.students);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
-    // For demonstration purposes, we use mock data
-    const mockLaggingStudents = [
-      { id: 1, name: 'Emily White', progress: { coursePercentage: 60, attendance: '75%', testMarks: 65 } },
-      { id: 2, name: 'David Green', progress: { coursePercentage: 55, attendance: '70%', testMarks: 58 } },
-    ];
-    setLaggingStudents(mockLaggingStudents);
+    getLaggingStudents();
   }, []);
 
   const toggleDetails = (index) => {
@@ -31,10 +42,10 @@ const LaggingStudents = () => {
         </thead>
         <tbody>
           {laggingStudents.map((student, index) => (
-            <React.Fragment key={student.id}>
+            <React.Fragment key={student._id}>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px', textAlign: 'left' }}>{student.id}</td>
-                <td style={{ padding: '8px', textAlign: 'left' }}>{student.name}</td>
+                <td style={{ padding: '8px', textAlign: 'left' }}>{student._id}</td>
+                <td style={{ padding: '8px', textAlign: 'left' }}>{student.username}</td>
                 <td style={{ padding: '8px', textAlign: 'left' }}>
                   <button onClick={() => toggleDetails(index)}>
                     {student.detailsExpanded ? 'Hide Progress' : 'Show Progress'}
