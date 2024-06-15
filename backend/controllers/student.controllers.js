@@ -58,7 +58,7 @@ export const login = async (req, res) => {
 
 // Get course content for a student
 export const getCourseContent = async (req, res) => {
-  const studentId = req.body.id;
+  const { studentId } = req.query;
 
   try {
     const student = await Student.findById(studentId);
