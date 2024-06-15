@@ -66,7 +66,7 @@ const verifyStudent = async (req, res) => {
 
     res
       .status(201)
-      .json({ message: "Student added successfully", student: newStudent });
+      .json({ message: "Student verified successfully", student: newStudent });
   } catch (error) {
     if (error.code === 11000) {
       // Check for duplicate key error
@@ -169,22 +169,47 @@ const mentorSuggestions = async (req, res) => {
 
 const getUnverifiedStudents = async (req, res) => {
   try {
-    const students = await Student.find();
-
-    const unverifiedStudents = students.filter(
-      (student) => !student.isVerified
-    );
-
-    if (!unverifiedStudents.length) {
-      res.json({ unverifiedStudents, message: "No unverified Students" });
-    }
-    res.json({ unverifiedStudents });
+    const unverifiedStudents = await Student.find({ isVerified: 0 });
+    res.status(200).json({ unverifiedStudents });
   } catch (err) {
     console.log(err);
     return res.status(404).json({ message: "error while getting students" });
   }
 };
 
+const getUnmatchedStudents = async (req, res) => {
+  try {
+    const unmatchedStudents = await Student.find({ mentor: null });
+    res.status(200).json({ unmatchedStudents });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Error getting unmatched students", error });
+  }
+}
+
+const matchStudent = async (req, res) => {
+  try {
+    const { studentId, mentorId } = req.params;
+    const student = await Student.findById(studentId);
+    if (!student) {
+      return res.status(404).json({ message: "Student not found" });
+    }
+
+    const mentor = await Mentor.findById(mentorId);
+    if (!mentor) {
+      return res.status(404).json({ message: "Mentor not found" });
+    }
+
+    student.mentor = mentorId;
+    await student.save();
+
+    res.status(200).json({ message: "Student matched successfully", student });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Error matching student", error });
+  }
+}
+ 
 export {
   login,
   addMentor,
@@ -193,4 +218,6 @@ export {
   getStudent,
   mentorSuggestions,
   getUnverifiedStudents,
+  getUnmatchedStudents,
+  matchStudent,
 };
