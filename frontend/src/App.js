@@ -7,6 +7,7 @@ import StudentDashboard from './pages/StudentDashboard';
 import NewApplicationPage from './pages/NewApplicationPage';
 import ExistingApplicationsPage from './pages/ExistingApplicationsPage';
 import CoursesPage from './pages/CoursesPage';
+import AdminDashboard from './pages/AdminDashboard';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/new-application" element={<NewApplicationPage />} />
         <Route path="/existing-applications" element={<ExistingApplicationsPage />} />
         <Route path="/courses" element={<CoursesPage />} />
+        <Route path="/admin" element={<AdminDashboard/>}/>
       </Routes>
     </Router>
   );
