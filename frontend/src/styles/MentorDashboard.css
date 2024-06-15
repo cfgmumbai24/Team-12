@@ -1,0 +1,37 @@
+/* styles/StudentDashboard.css */
+
+.mentor-dashboard-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .mentor-dashboard-page h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  .mentor-dashboard-page div {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .mentor-dashboard-page button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mentor-dashboard-page button:hover {
+    background-color: #0056b3;
+  }
+  

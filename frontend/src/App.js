@@ -10,9 +10,11 @@ import LoginPage from './pages/LoginPage';
 import Login from './pages/Login';
 import RegisterPage from './pages/RegisterPage';
 import StudentDashboard from './pages/StudentDashboard';
+import StudentHomePage from './pages/StudentHomePage';
 import NewApplicationPage from './pages/NewApplicationPage';
 import ExistingApplicationsPage from './pages/ExistingApplicationsPage';
 import CoursesPage from './pages/CoursesPage';
+import Login from './pages/Login';
 import AdminDashboard from './pages/AdminDashboard';
 
 const App = () => {
@@ -31,6 +33,7 @@ const App = () => {
         <Route path="/student/new-application" element={<NewApplicationPage />} />
         <Route path="/student/existing-applications" element={<ExistingApplicationsPage />} />
         <Route path="/student/courses" element={<CoursesPage />} />
+        <Route path="/student/studentHomePage" element={<StudentHomePage />} />
       </Routes>
     </Router>
     // <AdminDashboard />
