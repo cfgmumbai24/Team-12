@@ -8,13 +8,13 @@ const StudentDashboard = ({ onLogout }) => {
     <div className='dashboard-page'>
       <h1>Student Dashboard</h1>
       <div>
-        <Link to="/courses">
+        <Link to="/student/courses">
           <button>Courses</button>
         </Link>
-        <Link to="/existing-applications">
+        <Link to="/student/existing-applications">
           <button>Existing Applications</button>
         </Link>
-        <Link to="/new-application">
+        <Link to="/student/new-application">
           <button>New Application</button>
         </Link>
         <button onClick={onLogout}>Logout</button>
