@@ -1,6 +1,7 @@
 // src/pages/ExistingApplicationsPage.js
 
 import React from 'react';
+import '../styles/ExistingApplicationsPage.css';
 
 const applications = [
   { id: 1, college: 'Harvard', status: 'Accepted' },
@@ -10,7 +11,7 @@ const applications = [
 
 const ExistingApplicationsPage = () => {
   return (
-    <div>
+    <div className='existing-applications-page'>
       <h1>Existing Applications</h1>
       <table>
         <thead>

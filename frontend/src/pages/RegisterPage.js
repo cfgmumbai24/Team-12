@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/RegisterPage.css';
 
 const RegisterPage = () => {
   const [email, setEmail] = useState('');
@@ -14,7 +15,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <div>
+    <div className='register-form'>
       <h1>Register</h1>
       <form onSubmit={onSubmit}>
         <input
