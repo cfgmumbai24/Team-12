@@ -1,36 +1,35 @@
 /* styles/ExistingApplicationsPage.css */
 
 .existing-applications-page {
-    padding: 2rem;
-    background-color: #f0f0f0;
-  }
-  
-  .existing-applications-page h1 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    color: #333;
-  }
-  
-  .existing-applications-page table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .existing-applications-page th,
-  .existing-applications-page td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .existing-applications-page th {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  .existing-applications-page tr:hover {
-    background-color: #f0f0f0;
-  }
-  
+  padding: 2rem;
+  background-color: #FFFBEA; /* Light background color from the palette */
+}
+
+.existing-applications-page h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #F4D95B; /* Primary heading color from the palette */
+}
+
+.existing-applications-page table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #FCF3C6; /* Table background color from the palette */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.existing-applications-page th,
+.existing-applications-page td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #FAEAA3; /* Border color from the palette */
+}
+
+.existing-applications-page th {
+  background-color: #EFC814; /* Header background color from the palette */
+  color: #FFFBEA; /* Text color for headers */
+}
+
+.existing-applications-page tr:hover {
+  background-color: #FAEAA3; /* Row hover effect color from the palette */
+}

@@ -1,37 +1,47 @@
 /* styles/StudentDashboard.css */
 
+/* Updated color palette */
+:root {
+  --peach-light: #fdf3e6;   /* Light peach background */
+  --peach: #ff8a65;         /* Peach color */
+  --peach-lighter: #ffe0cc; /* Even lighter peach */
+  --blue: #007bff;          /* Blue primary color */
+  --blue-dark: #0056b3;     /* Darker blue on hover */
+  --gray-light: #ccc;       /* Light gray border */
+}
+
+/* Dashboard Page Styles */
 .dashboard-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-  }
-  
-  .dashboard-page h1 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    color: #333;
-  }
-  
-  .dashboard-page div {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .dashboard-page button {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .dashboard-page button:hover {
-    background-color: #0056b3;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--peach-light); /* Light peach background */
+}
+
+.dashboard-page h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #333; /* Dark text color */
+}
+
+.dashboard-page div {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-page button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: var(--blue); /* Blue primary button color */
+  color: #fff; /* White text color */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-page button:hover {
+  background-color: var(--blue-dark); /* Darker blue on hover */
+}

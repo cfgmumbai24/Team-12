@@ -1,40 +1,50 @@
-/* styles/CoursesPage.css */
-
 .courses-page {
-    padding: 2rem;
-    background-color: #f9f9f9;
-  }
-  
-  .courses-page h1 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    color: #333;
-  }
-  
-  .courses-page h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-  
-  .courses-page div {
-    margin-bottom: 2rem;
-  }
-  
-  .courses-page input[type='checkbox'] {
-    margin-right: 1rem;
-  }
-  
-  .courses-page ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .courses-page li {
-    margin-bottom: 0.5rem;
-  }
-  
-  .courses-page li:last-child {
-    margin-bottom: 0;
-  }
-  
+  padding: 2rem;
+  background-color: #FFFBEA; /* Background color from the palette */
+}
+
+.courses-page h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #EFC814; /* Primary color for headings */
+  text-align: center;
+}
+
+.courses-page h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #F4D95B; /* Secondary color for subheadings */
+}
+
+.courses-page div {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #FCF3C6; /* Light background for sections */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.courses-page input[type='checkbox'] {
+  margin-right: 1rem;
+}
+
+.courses-page ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.courses-page li {
+  margin-bottom: 0.5rem;
+  background-color: #FAEAA3; /* Light item background */
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.courses-page li:last-child {
+  margin-bottom: 0;
+}
+
+.courses-page li:hover {
+  background-color: #F2D138; /* Hover effect for list items */
+  transition: background-color 0.3s ease;
+}

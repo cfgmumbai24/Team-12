@@ -16,6 +16,11 @@ import ExistingApplicationsPage from './pages/ExistingApplicationsPage';
 import CoursesPage from './pages/CoursesPage';
 import Login from './pages/Login';
 import AdminDashboard from './pages/AdminDashboard';
+import LaggingStudents from './pages/LaggingStudents';
+import UpdateMarks from './pages/UpdateMarks';
+import AddMentor from './pages/AddMentor';
+import AddCourse from './pages/AddCourse';
+
 
 const App = () => {
   return (
