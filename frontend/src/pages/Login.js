@@ -4,8 +4,8 @@ import "./styles/LoginPage.css"; // Import the CSS file for styling
 
 const Login = () => {
   const [formData, setFormData] = useState({});
-  const handleChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  // const handleChange = (e) =>
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleLogin = async (e) => {
     e.preventDefault();
