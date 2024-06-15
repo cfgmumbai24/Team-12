@@ -6,7 +6,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    navigate('/dashboard');
+    navigate('/mentor/dashboard');
   };
 
   return (
