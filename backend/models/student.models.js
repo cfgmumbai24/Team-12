@@ -27,6 +27,7 @@ const StudentSchema = new mongoose.Schema(
         },                                        
         scholarship : Boolean
     }],
+    isVerified: { type: Boolean, default: false },
   },
   { timestamps: true }
 );
