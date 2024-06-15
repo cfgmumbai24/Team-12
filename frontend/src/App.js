@@ -7,6 +7,10 @@ import StudentDashboard from './pages/StudentDashboard';
 import NewApplicationPage from './pages/NewApplicationPage';
 import ExistingApplicationsPage from './pages/ExistingApplicationsPage';
 import CoursesPage from './pages/CoursesPage';
+import MentorDashboard from './pages/MentorDashboard';
+import StudentDetailsPage from './pages/StudentDetailsPage';
+import LaggingStudentsPage from './pages/LaggingStudentsPage';
+import UpdateMarksPage from './pages/UpdateMarksPage';
 
 const App = () => {
   return (
@@ -19,6 +23,10 @@ const App = () => {
         <Route path="/new-application" element={<NewApplicationPage />} />
         <Route path="/existing-applications" element={<ExistingApplicationsPage />} />
         <Route path="/courses" element={<CoursesPage />} />
+        <Route path="/mentor-dashboard" element={<MentorDashboard />} />
+        <Route path="/students/:id" element={<StudentDetailsPage />} />
+        <Route path="/lagging-students" element={<LaggingStudentsPage />} />
+        <Route path="/update-marks" element={<UpdateMarksPage />} />
       </Routes>
     </Router>
   );
