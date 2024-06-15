@@ -1,0 +1,64 @@
+/* styles/LoginPage.css */
+
+:root {
+  --peach-light: #FCF3C6;    /* Slightly lighter peach */
+  --peach-lighter: #FAEAA3;  /* Even lighter peach */
+  --peach-lightest: #F4D95B; /* Light peach */
+  --peach: #F2D138;          /* Peach color */
+  --peach-dark: #EFC814;     /* Dark peach */
+}
+
+body {
+  font-family: Arial, sans-serif; /* Default font family */
+  margin: 0;
+  padding: 0;
+  background-color: var(--peach-light); /* Light peach background for the entire page */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form {
+  width: 300px;
+  padding: 20px;
+  background-color: #fff; /* White background for the login form */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle depth effect */
+  text-align: center; /* Center align text within login form */
+  border-radius: 10px; /* Rounded corners for the form */
+}
+
+.login-form h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #333; /* Dark gray color for the heading */
+}
+
+.login-form input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--peach-dark); /* Dark peach background for the button */
+  color: #fff; /* White text color */
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease; /* Smooth transition for background color change */
+  border-radius: 5px; /* Rounded corners for the button */
+  margin-top: 1rem; /* Add some top margin for spacing */
+}
+
+.login-form button:hover {
+  background-color: var(--peach-lightest); /* Light peach on hover */
+}
