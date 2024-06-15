@@ -89,6 +89,24 @@ export const getStudent = async (req, res) => {
   }
 };
 
+export const getApplication = async (req, res) => {
+  try {
+    const { studentId } = req.query;
+    const student = await Student.findById(studentId);
+    if (!student) {
+      return res.status(404).json({ message: "Student not found" });
+    }
+
+    student.uniStatus.push({ uniName, AppStatus, scholarship });
+
+    await student.save();
+
+    res.status(200).json(student);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
+
 export const addApplicationStatus = async (req, res) => {
   try {
     const { uniName, AppStatus, scholarship } = req.body;
