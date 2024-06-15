@@ -1,129 +1,125 @@
 /* Global Styles */
 body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #fdf3e6; /* Light peach background for the entire page */
-    color: #333;
-  }
-  
-  /* Layout Styles */
-  .layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .header {
-    background-color: #ff8a65; /* Peach color */
-    color: white;
-    padding: 20px;
-    text-align: center;
-    font-size: 2em;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .content {
-    flex: 1;
-    padding: 20px;
-    background-color: #fff7f0; /* Slightly lighter peach for content area */
-    border-top: 2px solid #ff8a65;
-    border-bottom: 2px solid #ff8a65;
-  }
-  
-  .footer {
-    background-color: #ffe0cc; /* Even lighter peach for footer */
-    padding: 10px;
-    text-align: center;
-    border-top: 1px solid #ff8a65;
-    font-size: 0.9em;
-  }
-  
-  .footer a {
-    color: #ff8a65;
-    text-decoration: none;
-  }
-  
-  .footer a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Form Styles */
-  form {
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ff8a65;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  input, select {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  
-  button.primary {
-    background-color: #ff8a65; /* Peach color for primary buttons */
-    color: white;
-  }
-  
-  button.primary:hover {
-    background-color: #ff7043; /* Darker peach on hover */
-  }
-  
-  button.danger {
-    background-color: #ff5252; /* Red for danger buttons */
-    color: white;
-  }
-  
-  button.danger:hover {
-    background-color: #ff1744; /* Darker red on hover */
-  }
-  
-  button.light {
-    background-color: #ffe0cc; /* Light peach for light buttons */
-    color: #333;
-  }
-  
-  button.light:hover {
-    background-color: #ffd1b3; /* Darker light peach on hover */
-  }
-  
-  /* Dashboard Page Styles */
-  .dashboard-page {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-  }
-  
-  .dashboard-page h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .dashboard-page div {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  
-  .dashboard-page button {
-    margin: 10px;
-    flex: 1 1 30%;
-    max-width: 200px;
-  }
-  
-  .admin-dashboard h2, .mentor-dashboard h2, .student-dashboard h2 {
-    color: #ff8a65;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fdf3e6; /* Light peach background for the entire page */
+  color: #333;
+}
+
+/* Layout Styles */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #ff8a65; /* Peach color */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 2em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff7f0; /* Slightly lighter peach for content area */
+  border-top: 2px solid #ff8a65;
+  border-bottom: 2px solid #ff8a65;
+}
+
+.footer {
+  background-color: #ffe0cc; /* Even lighter peach for footer */
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid #ff8a65;
+  font-size: 0.9em;
+}
+
+.footer a {
+  color: #ff8a65;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Form Styles */
+form {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ff8a65;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button.primary {
+  background-color: #ff8a65; /* Peach color for primary buttons */
+  color: white;
+}
+
+button.primary:hover {
+  background-color: #ff7043; /* Darker peach on hover */
+}
+
+button.danger {
+  background-color: #ff5252; /* Red for danger buttons */
+  color: white;
+}
+
+button.danger:hover {
+  background-color: #ff1744; /* Darker red on hover */
+}
+
+button.light {
+  background-color: #ffe0cc; /* Light peach for light buttons */
+  color: #333;
+}
+
+button.light:hover {
+  background-color: #ffd1b3; /* Darker light peach on hover */
+}
+
+/* Dashboard Page Styles */
+.dashboard-page {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.dashboard-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-page div {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.admin-dashboard h2,
+.mentor-dashboard h2,
+.student-dashboard h2 {
+  color: #ff8a65; /* Heading color for dashboards */
+}

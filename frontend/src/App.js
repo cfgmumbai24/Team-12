@@ -7,6 +7,8 @@ import GetStudents from "./pages/GetStudents";
 // import UpdateMarks from './pages/UpdateMarks';
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
+import Login from "./pages/Login";
+
 import RegisterPage from "./pages/RegisterPage";
 import StudentDashboard from "./pages/StudentDashboard";
 import StudentHomePage from "./pages/StudentHomePage";
@@ -19,6 +21,7 @@ import AddCourse from "./pages/AddCourse";
 import UpdateMarks from "./pages/UpdateMarks";
 import LaggingStudents from "./pages/LaggingStudents";
 import VerifyStudent from "./pages/VerifyStudent";
+import MentorSuggestions from "./pages/MentorSuggestions";
 
 const App = () => {
   return (
@@ -43,8 +46,14 @@ const App = () => {
         />
         <Route path="/student/courses" element={<CoursesPage />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        {/* <Route path="/admin/add-mentor" element={<AddMentor />} />
-        <Route path="/admin/add-course" element={<AddCourse />} /> */}
+        <Route path="/admin/add-mentor" element={<AddMentor />} />
+        <Route path="/admin/add-course" element={<AddCourse />} />
+        <Route path="/student/studentHomePage" element={<StudentHomePage />} />
+        <Route path="/admin/verify-student" element={<VerifyStudent />} />
+        <Route
+          path="/admin/mentor-suggestions"
+          element={<MentorSuggestions />}
+        />
       </Routes>
     </Router>
     // {/* <AdminDashboard /> */}

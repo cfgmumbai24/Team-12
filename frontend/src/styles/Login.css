@@ -2,52 +2,51 @@
 
 :root {
   --peach-light: #FCF3C6;    /* Slightly lighter peach */
-  --peach-lighter: #FAEAA3;   /* Even lighter peach */
-  --peach-lightest: #F4D95B;  /* Light peach */
-  --peach: #F2D138;           /* Peach color */
-  --peach-dark: #EFC814;      /* Dark peach */
+  --peach-lighter: #FAEAA3;  /* Even lighter peach */
+  --peach-lightest: #F4D95B; /* Light peach */
+  --peach: #F2D138;          /* Peach color */
+  --peach-dark: #EFC814;     /* Dark peach */
 }
 
-body, html {
+body {
+  font-family: Arial, sans-serif; /* Default font family */
   margin: 0;
   padding: 0;
-  height: 100%;
-}
-
-.mentor-login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh; /* Ensure the login form takes up the full viewport height */
   background-color: var(--peach-light); /* Light peach background for the entire page */
 }
 
-.mentor-login h1 {
-  font-size: 3rem;
-  margin-bottom: 2rem;
-  color: #333; /* Dark gray color for the heading */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.mentor-login {
+.login-form {
   width: 300px;
-  padding: 2rem;
+  padding: 20px;
   background-color: #fff; /* White background for the login form */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle depth effect */
   text-align: center; /* Center align text within login form */
   border-radius: 10px; /* Rounded corners for the form */
 }
 
-.mentor-login input {
-  width: calc(100% - 16px); /* Adjust width to account for padding and border */
-  padding: 0.8rem;
-  margin-bottom: 1rem;
+.login-form h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #333; /* Dark gray color for the heading */
+}
+
+.login-form input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
   border: 1px solid #ccc; /* Light gray border */
   border-radius: 4px;
   font-size: 1rem;
 }
 
-.mentor-login button {
+.login-form button {
   width: 100%;
   padding: 1rem;
   background-color: var(--peach-dark); /* Dark peach background for the button */
@@ -60,6 +59,6 @@ body, html {
   margin-top: 1rem; /* Add some top margin for spacing */
 }
 
-.mentor-login button:hover {
+.login-form button:hover {
   background-color: var(--peach-lightest); /* Light peach on hover */
 }

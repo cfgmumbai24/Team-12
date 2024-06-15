@@ -1,61 +1,63 @@
 .admin-dashboard {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  .admin-dashboard h1 {
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 2em;
-    color: #333;
-  }
-  
-  .admin-dashboard form {
-    margin-bottom: 30px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-  }
-  
-  .admin-dashboard form h2 {
-    margin-bottom: 10px;
-    font-size: 1.5em;
-    color: #555;
-  }
-  
-  .admin-dashboard form input,
-  .admin-dashboard form select {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .admin-dashboard form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-  }
-  
-  .admin-dashboard form button:hover {
-    background-color: #218838;
-  }
-  
-  .admin-dashboard form input:focus,
-  .admin-dashboard form select:focus {
-    border-color: #80bdff;
-    outline: 0;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
-  }
-  
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #EFC814;
+  border-radius: 10px;
+  background-color: #FFFBEA;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-dashboard h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2em;
+  color: #EFC814;
+}
+
+.admin-dashboard form {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #FAEAA3;
+  border-radius: 10px;
+  background-color: #FCF3C6;
+}
+
+.admin-dashboard form h2 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #F2D138;
+}
+
+.admin-dashboard form input,
+.admin-dashboard form select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #FAEAA3;
+  border-radius: 5px;
+  background-color: #FFFBEA;
+}
+
+.admin-dashboard form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #EFC814;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.admin-dashboard form button:hover {
+  background-color: #F2D138;
+}
+
+.admin-dashboard form input:focus,
+.admin-dashboard form select:focus {
+  border-color: #F4D95B;
+  outline: 0;
+  box-shadow: 0 0 5px rgba(244, 217, 91, 0.5);
+}

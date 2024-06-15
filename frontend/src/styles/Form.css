@@ -1,41 +1,41 @@
 /* Form.css */
 
 .form-container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ff8a65;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .form-container h2 {
-    text-align: center;
-    color: #ff8a65;
-    margin-bottom: 20px;
-  }
-  
-  input, select {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  button.primary {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    background-color: #ff8a65;
-    color: white;
-    display: block;
-    width: 100%;
-  }
-  
-  button.primary:hover {
-    background-color: #ff7043;
-  }
-  
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #FFFBEA; /* Background color from the palette */
+  border: 1px solid #F4D95B; /* Border color from the palette */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #F4D95B; /* Heading color from the palette */
+  margin-bottom: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #FAEAA3; /* Border color from the palette */
+  border-radius: 3px;
+  background-color: #FCF3C6; /* Input background color for better UI */
+}
+
+button.primary {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #F2D138; /* Primary button color from the palette */
+  color: white;
+  display: block;
+  width: 100%;
+}
+
+button.primary:hover {
+  background-color: #EFC814; /* Hover color from the palette */
+}

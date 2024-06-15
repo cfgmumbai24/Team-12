@@ -3,14 +3,15 @@
   max-width: 800px;
   margin: 50px auto;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #EFC814; /* Use a border color from the palette */
   border-radius: 5px;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: #FFFBEA; /* Background color from the palette */
 }
 
 h1 {
   margin-bottom: 20px;
+  color: #F4D95B; /* Primary color for headings */
 }
 
 form {
@@ -22,12 +23,21 @@ select {
   width: calc(100% - 20px);
   padding: 10px;
   margin-bottom: 10px;
+  border: 1px solid #EFC814; /* Border color from the palette */
+  border-radius: 5px;
+  background-color: #FCF3C6; /* Input background color from the palette */
+}
+
+input:focus,
+select:focus {
+  border-color: #FAEAA3; /* Focus border color from the palette */
+  outline: none;
+  box-shadow: 0 0 5px rgba(250, 234, 163, 0.5); /* Focus shadow effect */
 }
 
 button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
@@ -35,29 +45,42 @@ button {
   margin-bottom: 10px;
 }
 
-button:hover {
-  background-color: #0056b3;
+button.primary {
+  background-color: #F4D95B; /* Button primary color from the palette */
+}
+
+button.primary:hover {
+  background-color: #EFC814; /* Hover effect for primary button */
+}
+
+button.secondary {
+  background-color: #FAEAA3; /* Button secondary color from the palette */
+}
+
+button.secondary:hover {
+  background-color: #F4D95B; /* Hover effect for secondary button */
+}
+
+button.danger {
+  background-color: #EFC814; /* Danger button color from the palette */
+}
+
+button.danger:hover {
+  background-color: #F2D138; /* Hover effect for danger button */
+}
+
+button.light {
+  background-color: #F8F9FA; /* Light button color from the palette */
+  color: #000;
+}
+
+button.light:hover {
+  background-color: #FCF3C6; /* Hover effect for light button */
 }
 
 button:disabled {
   background-color: #ccc;
-}
-
-button.primary {
-  background-color: #007bff;
-}
-
-button.secondary {
-  background-color: #6c757d;
-}
-
-button.danger {
-  background-color: #dc3545;
-}
-
-button.light {
-  background-color: #f8f9fa;
-  color: #000;
+  cursor: not-allowed;
 }
 
 .error {
