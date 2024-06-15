@@ -1,6 +1,7 @@
 // src/pages/NewApplicationPage.js
 
 import React, { useState } from 'react';
+import '../styles/NewApplicationPage.css';
 
 const NewApplicationPage = () => {
   const [college, setCollege] = useState('');
@@ -18,7 +19,7 @@ const NewApplicationPage = () => {
   };
 
   return (
-    <div>
+    <div className='new-application-form'>
       <h1>New Application</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="college">College:</label>

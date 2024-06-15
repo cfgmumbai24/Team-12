@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 // import { AuthContext } from '../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
+import '../styles/LoginPage.css';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -14,7 +15,7 @@ const LoginPage = () => {
     };
 
   return (
-    <div>
+    <div className='login-form'>
       <h1>Login</h1>
       <form>
         <input

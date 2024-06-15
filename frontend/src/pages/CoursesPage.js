@@ -1,11 +1,12 @@
 // src/pages/CoursesPage.js
 
 import React, { useState } from 'react';
+import '../styles/CoursesPage.css';
 
 const courses = [
-  { id: 1, name: 'Math 101' },
-  { id: 2, name: 'History 201' },
-  { id: 3, name: 'Science 301' },
+  { id: 1, name: 'Lecture 1' },
+  { id: 2, name: 'Lecture 2' },
+  { id: 3, name: 'Lecture 3' },
 ];
 
 const tests = [
@@ -27,8 +28,8 @@ const CoursesPage = () => {
   const averageMarks = tests.reduce((acc, test) => acc + test.marks, 0) / tests.length;
 
   return (
-    <div>
-      <h1>Courses</h1>
+    <div className='courses-page'>
+      <h1>Course</h1>
       <h2>Your Progress: {userProgress}%</h2>
       <div>
         {courses.map((course) => (

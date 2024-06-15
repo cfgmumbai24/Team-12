@@ -2,11 +2,12 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/HomePage.css';
 
 const HomePage = () => {
   return (
-    <div>
-      <h1>Welcome to Student Portal</h1>
+    <div className='home-page'>
+      <h1>Welcome to Student Dashboard</h1>
       <div>
         <Link to="/login">
           <button>Login</button>
