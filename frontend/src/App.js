@@ -20,6 +20,7 @@ import AddCourse from './pages/AddCourse';
 import UpdateMarks from './pages/UpdateMarks';
 import LaggingStudents from './pages/LaggingStudents';
 import VerifyStudent from './pages/VerifyStudent';
+import Login from './pages/Login';
 
 const App = () => {
   return (
@@ -40,6 +41,7 @@ const App = () => {
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/add-mentor" element={<AddMentor />} />
         <Route path="/admin/add-course" element={<AddCourse />} />
+        <Route path="/student/studentHomePage" element={<StudentHomePage />} />
       </Routes>
     </Router>
     // {/* <AdminDashboard /> */}
