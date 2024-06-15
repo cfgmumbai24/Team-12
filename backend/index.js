@@ -3,8 +3,8 @@ import dotenv from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
 import adminRouter from "./routes/admin.routes.js";
-import mentorRouter from "./routes/mentor.routes.js";
-
+import mentorRoutes from "./routes/mentor.routes.js";
+import studentRoutes from "./routes/student.routes.js";
 const app = express();
 dotenv.config();
 
@@ -19,7 +19,11 @@ const corsOptions = {
   },
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  allowedHeaders: ["Content-Type", "Authorization", "Access-Control-Allow-Credentials"],
+  allowedHeaders: [
+    "Content-Type",
+    "Authorization",
+    "Access-Control-Allow-Credentials",
+  ],
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
@@ -28,14 +32,17 @@ app.use(express.json());
 app.use(cors(corsOptions));
 
 mongoose
-  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
 // Routes
 app.use("/admin", adminRouter);
-app.use("/mentor", mentorRouter);
-
+app.use("/mentor", mentorRoutes);
+app.use("/student", studentRoutes);
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
 });
