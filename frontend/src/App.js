@@ -6,7 +6,12 @@ import GetStudents from './pages/GetStudents';
 import LaggingStudents from './pages/LaggingStudents';
 import UpdateMarks from './pages/UpdateMarks';
 import HomePage from './pages/HomePage';
-import Login from './pages/Login';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import StudentDashboard from './pages/StudentDashboard';
+import NewApplicationPage from './pages/NewApplicationPage';
+import ExistingApplicationsPage from './pages/ExistingApplicationsPage';
+import CoursesPage from './pages/CoursesPage';
 
 const App = () => {
   return (
@@ -19,6 +24,7 @@ const App = () => {
         <Route path="/dashboard" element={<MentorDashboard />} />
       </Routes>
     </Router>
+    // <AdminDashboard />
   );
 };
 
