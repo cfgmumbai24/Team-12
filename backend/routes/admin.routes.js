@@ -1,5 +1,6 @@
 import express from "express";
 import {
+  login,
   addMentor,
   addCourse,
   getStudent,
@@ -10,7 +11,7 @@ import {
 
 const router = express.Router();
 
-// router.post("/login", login);
+router.post("/login", login);
 router.post("/addMentor", addMentor);
 router.put("/verifyStudent", verifyStudent);
 router.get("/getUnverifiedStudents", getUnverifiedStudents);
