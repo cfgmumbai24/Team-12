@@ -14,6 +14,7 @@ const AdminDashboard = () => {
         <div className='button-group'>
           <button className="primary" onClick={() => navigate('/admin/add-mentor')}>Add Mentor</button>
           <button className="primary" onClick={() => navigate('/admin/add-course')}>Add Course</button>
+          <button className='primary' onClick={() => navigate('/admin/verify-student')}>Verify Student</button>
         </div>
       </div>
     </Layout>
