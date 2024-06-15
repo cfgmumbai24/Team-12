@@ -1,41 +1,34 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button, TextField, Container, Typography } from '@mui/material';
+import React, { useState } from 'react';
 import axios from 'axios';
-
+import './styles/LoginPage.css'; // Import the CSS file for styling
 
 const Login = () => {
-  const navigate = useNavigate();
-  const [formData, setFormData] = React.useState({});
+  const [formData, setFormData] = useState({});
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleLogin = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     try {
       const res = await axios.post('http://localhost:8080/mentor/login', formData);
       console.log(res.data);
       localStorage.setItem('mentorId', res.data.mentor._id);
-      navigate('/mentor/dashboard');
+      // Redirect to mentor dashboard upon successful login
+      // Replace '/mentor/dashboard' with your desired route
+      window.location.href = '/mentor/dashboard';
     } catch (error) {
       console.log(error);
     }
   };
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log(formData);
-  }
-
   return (
-    <Container maxWidth="sm">
-      <Typography variant="h4" gutterBottom>
-        Mentor Login
-      </Typography>
-      <TextField label="Username" fullWidth margin="normal" onChange={handleChange} name='username' />
-      <TextField label="Password" type="password" fullWidth margin="normal" onChange={handleChange} name='password' />
-      <Button variant="contained" color="primary" onClick={handleLogin} fullWidth>
-        Login
-      </Button>
-    </Container>
+    <div className="container">
+      <div className="login-form">
+        <h1>Mentor Login</h1>
+        <input type="text" name="username" placeholder="Username" onChange={handleChange} />
+        <input type="password" name="password" placeholder="Password" onChange={handleChange} />
+        <button type="submit" onClick={handleLogin}>Login</button>
+      </div>
+    </div>
   );
 };
 
