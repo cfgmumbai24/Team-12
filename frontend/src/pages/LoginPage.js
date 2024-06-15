@@ -10,7 +10,7 @@ const LoginPage = () => {
     const navigate = useNavigate();
 
     const handleNavigateToDashboard = () => {
-    navigate('/dashboard');
+    navigate('/student/dashboard');
     };
 
   return (

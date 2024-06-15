@@ -9,10 +9,10 @@ const HomePage = () => {
     <div className='home-page'>
       <h1>Welcome to Student Dashboard</h1>
       <div>
-        <Link to="/login">
+        <Link to="/student/login">
           <button>Login</button>
         </Link>
-        <Link to="/register">
+        <Link to="/student/register">
           <button>Register</button>
         </Link>
       </div>
