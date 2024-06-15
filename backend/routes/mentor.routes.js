@@ -1,12 +1,22 @@
 import express from "express";
+import {
+  login,
+  getMentor,
+  getStudents,
+  getLaggingStudents,
+  getStudent,
+  addMarks,
+  addTest,
+} from "../controllers/mentor.controllers.js";
 
 const router = express.Router();
 
 router.post("/login", login);
-router.get("/:id", getMentor);
-router.get("/:id/getStudents", getStudents);
-router.get("/:id/getLaggingStudents", getLaggingStudents);
-router.get("/:id/getStudent/:studentId", getStudent);
-router.post("/:test_id/addMarks/:studentId", addMarks);
+router.get("/", getMentor);
+router.get("/getStudents", getStudents);
+router.get("/getLaggingStudents", getLaggingStudents); // to be done
+router.get("/getStudent/:studentId", getStudent); // update from student.routes.js
+router.post("/:test_id/addMarks/:studentId", addMarks); 
+router.post("/addTest", addTest);
 
 export default router;
