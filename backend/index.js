@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
 import adminRouter from "./routes/admin.routes.js";
-
+import mentorRouter from "./routes/mentor.routes.js";
 
 const app = express();
 dotenv.config();
@@ -34,6 +34,7 @@ mongoose
 
 // Routes
 app.use("/admin", adminRouter);
+app.use("/mentor", mentorRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);

@@ -2,6 +2,31 @@ import { Mentor } from "../models/mentor.models.js";
 import { Course } from "../models/course.models.js";
 import { Student } from "../models/student.models.js";
 
+import bcrypt from "bcrypt";
+
+const login = async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    
+    // Find the mentor by username and password
+    const mentor = await Mentor.findOne({ username, password });
+    if (!mentor) {
+      return res.status(404).json({ message: "Invalid credentials" });
+    }
+
+    // compare the password
+    const isMatch = await bcrypt.compare(password, mentor.password);
+    if (!isMatch) {
+      return res.status(404).json({ message: "Invalid credentials" });
+    }
+    
+    res.status(200).json({ message: "Logged in successfully", mentor });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Error logging in", error });
+  }
+}
+
 const addMentor = async (req, res) => {
   try {
     const { username, password, course, tags } = req.body;
@@ -34,7 +59,10 @@ const verifyStudent = async (req, res) => {
     const { studentId } = req.body;
 
     // Create a new student instance
-    const newStudent = await Student.findOneAndUpdate({ _id: studentId }, {isVerified : 1});
+    const newStudent = await Student.findOneAndUpdate(
+      { _id: studentId },
+      { isVerified: 1 }
+    );
 
     res
       .status(201)
@@ -100,41 +128,43 @@ const getStudent = async (req, res) => {
 
 const getMatchingMentors = async (studentId) => {
   try {
-      // Fetch the student
-      const student = await Student.findById(studentId);
-      if (!student) {
-          throw new Error('Student not found');
-      }
+    // Fetch the student
+    const student = await Student.findById(studentId);
+    if (!student) {
+      throw new Error("Student not found");
+    }
 
-      // Get all mentors
-      const mentors = await Mentor.find();
-      // Calculate the number of matching tags for each mentor
-      const mentorMatches = mentors.map(mentor => {
-          const matchingTags = mentor.tags.filter(tag => student.tags.includes(tag));
-          return {
-              mentor,
-              matchCount: matchingTags.length
-          };
-      });
+    // Get all mentors
+    const mentors = await Mentor.find();
+    // Calculate the number of matching tags for each mentor
+    const mentorMatches = mentors.map((mentor) => {
+      const matchingTags = mentor.tags.filter((tag) =>
+        student.tags.includes(tag)
+      );
+      return {
+        mentor,
+        matchCount: matchingTags.length,
+      };
+    });
 
-      // Sort mentors by the number of matching tags in descending order
-      mentorMatches.sort((a, b) => b.matchCount - a.matchCount);
+    // Sort mentors by the number of matching tags in descending order
+    mentorMatches.sort((a, b) => b.matchCount - a.matchCount);
 
-      // Return the sorted mentors
-      return mentorMatches.map(match => match.mentor);
+    // Return the sorted mentors
+    return mentorMatches.map((match) => match.mentor);
   } catch (error) {
-      throw new Error(`Error getting matching mentors: ${error.message}`);
+    throw new Error(`Error getting matching mentors: ${error.message}`);
   }
 };
 
-const mentorSuggestions = async(req, res) => {
-  const {studentId} = req.params;
+const mentorSuggestions = async (req, res) => {
+  const { studentId } = req.params;
   try {
     const matchingMentors = await getMatchingMentors(studentId);
     res.status(200).json(matchingMentors);
-} catch (error) {
+  } catch (error) {
     res.status(500).json({ message: error.message });
-}
+  }
 };
 
 const getUnverifiedStudents = async (req, res) => {
@@ -146,7 +176,7 @@ const getUnverifiedStudents = async (req, res) => {
     );
 
     if (!unverifiedStudents.length) {
-      res.json({ unverifiedStudents ,message: "No unverified Students" });
+      res.json({ unverifiedStudents, message: "No unverified Students" });
     }
     res.json({ unverifiedStudents });
   } catch (err) {
@@ -155,10 +185,8 @@ const getUnverifiedStudents = async (req, res) => {
   }
 };
 
-
-
-
 export {
+  login,
   addMentor,
   verifyStudent,
   addCourse,

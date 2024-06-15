@@ -8,7 +8,7 @@ const StudentSchema = new mongoose.Schema(
     phoneNumber : String,
     course: { type: mongoose.Schema.ObjectId, ref: "Course" },
     course_progress: { type: Number }, // video watched
-    test_progress: { type: Number }, // test taken
+    test_progress: { type: Number, default: 0 }, // test taken
     mentor: { type: mongoose.Schema.ObjectId, ref: "Mentor" },
     tags: [String],
     class : {
@@ -33,6 +33,4 @@ const StudentSchema = new mongoose.Schema(
 );
 
 export const Student = mongoose.model("students", StudentSchema);
-
-
 
