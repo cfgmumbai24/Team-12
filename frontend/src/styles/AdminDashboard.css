@@ -1,0 +1,61 @@
+.admin-dashboard {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .admin-dashboard h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+  }
+  
+  .admin-dashboard form {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .admin-dashboard form h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #555;
+  }
+  
+  .admin-dashboard form input,
+  .admin-dashboard form select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .admin-dashboard form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .admin-dashboard form button:hover {
+    background-color: #218838;
+  }
+  
+  .admin-dashboard form input:focus,
+  .admin-dashboard form select:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+  }
+  
