@@ -1,24 +1,32 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../styles/RegisterPage.css';
-
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../styles/RegisterPage.css";
+import axios from "axios";
 const RegisterPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [username, setUserName] = useState('');
-  const [number, setNumber] = useState('');
-  const [courseName, setCourseName] = useState('');
-  const [className, setClassName] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUserName] = useState("");
+  const [number, setNumber] = useState("");
+  const [courseName, setCourseName] = useState("");
+  const [className, setClassName] = useState("");
 
   const navigate = useNavigate();
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    navigate('/login');
+    const res = await axios.post("http://localhost:8080/student/register", {
+      email,
+      password,
+      username,
+      number,
+      courseName, // This should be the name of the course
+      className,
+    });
+    navigate("/login");
   };
 
   return (
-    <div className='register-form'>
+    <div className="register-form">
       <h1>Register</h1>
       <form onSubmit={onSubmit}>
         <input

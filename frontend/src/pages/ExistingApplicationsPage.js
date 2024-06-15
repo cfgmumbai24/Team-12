@@ -1,7 +1,8 @@
 // src/pages/ExistingApplicationsPage.js
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/ExistingApplicationsPage.css";
+import axios from "axios";
 
 const applications = [
   { id: 1, college: "Harvard", status: "Accepted" },
@@ -11,21 +12,22 @@ const applications = [
 
 const ExistingApplicationsPage = () => {
   const studentId = localStorage.getItem("studentId");
+  const [applications, setApplications] = useState([]);
   useEffect(() => {
-    const fetchCourseContent = async () => {
+    const fetchApplication = async () => {
       const params = { studentId: studentId };
       try {
         const { data } = await axios.get(
-          "http://localhost:8080/student/getCourseContent",
+          "http://localhost:8080/student/getApplications",
           { params }
         );
-        setCourses(data);
+        setApplications(data);
       } catch (error) {
         console.error("Error fetching course content:", error);
       }
     };
 
-    fetchCourseContent();
+    fetchApplication();
   }, []);
   return (
     <div className="existing-applications-page">
@@ -39,9 +41,9 @@ const ExistingApplicationsPage = () => {
         </thead>
         <tbody>
           {applications.map((application) => (
-            <tr key={application.id}>
-              <td>{application.college}</td>
-              <td>{application.status}</td>
+            <tr key={application._id}>
+              <td>{application.uniName}</td>
+              <td>{application.AppStatus}</td>
             </tr>
           ))}
         </tbody>

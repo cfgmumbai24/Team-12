@@ -89,7 +89,7 @@ export const getStudent = async (req, res) => {
   }
 };
 
-export const getApplication = async (req, res) => {
+export const getApplications = async (req, res) => {
   try {
     const { studentId } = req.query;
     const student = await Student.findById(studentId);
