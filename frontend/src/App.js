@@ -14,7 +14,6 @@ import StudentHomePage from './pages/StudentHomePage';
 import NewApplicationPage from './pages/NewApplicationPage';
 import ExistingApplicationsPage from './pages/ExistingApplicationsPage';
 import CoursesPage from './pages/CoursesPage';
-import Login from './pages/Login';
 import AdminDashboard from './pages/AdminDashboard';
 
 const App = () => {
