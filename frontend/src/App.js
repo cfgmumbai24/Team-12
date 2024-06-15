@@ -9,9 +9,11 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import StudentDashboard from './pages/StudentDashboard';
+import StudentHomePage from './pages/StudentHomePage';
 import NewApplicationPage from './pages/NewApplicationPage';
 import ExistingApplicationsPage from './pages/ExistingApplicationsPage';
 import CoursesPage from './pages/CoursesPage';
+import Login from './pages/Login';
 
 const App = () => {
   return (
@@ -29,6 +31,7 @@ const App = () => {
         <Route path="/student/new-application" element={<NewApplicationPage />} />
         <Route path="/student/existing-applications" element={<ExistingApplicationsPage />} />
         <Route path="/student/courses" element={<CoursesPage />} />
+        <Route path="/student/studentHomePage" element={<StudentHomePage />} />
       </Routes>
     </Router>
     // <AdminDashboard />
