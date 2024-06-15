@@ -3,11 +3,11 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MentorDashboard from './pages/MentorDashboard';
 import GetStudents from './pages/GetStudents';
-import LaggingStudents from './pages/LaggingStudents';
-import UpdateMarks from './pages/UpdateMarks';
+
+// import UpdateMarks from './pages/UpdateMarks';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
-import Login from './pages/Login';
+
 import RegisterPage from './pages/RegisterPage';
 import StudentDashboard from './pages/StudentDashboard';
 import StudentHomePage from './pages/StudentHomePage';
@@ -15,6 +15,11 @@ import NewApplicationPage from './pages/NewApplicationPage';
 import ExistingApplicationsPage from './pages/ExistingApplicationsPage';
 import CoursesPage from './pages/CoursesPage';
 import AdminDashboard from './pages/AdminDashboard';
+import AddMentor from './pages/AddMentor';
+import AddCourse from './pages/AddCourse';
+import UpdateMarks from './pages/UpdateMarks';
+import LaggingStudents from './pages/LaggingStudents';
+import VerifyStudent from './pages/VerifyStudent';
 
 const App = () => {
   return (
@@ -32,10 +37,12 @@ const App = () => {
         <Route path="/student/new-application" element={<NewApplicationPage />} />
         <Route path="/student/existing-applications" element={<ExistingApplicationsPage />} />
         <Route path="/student/courses" element={<CoursesPage />} />
-        <Route path="/student/studentHomePage" element={<StudentHomePage />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/add-mentor" element={<AddMentor />} />
+        <Route path="/admin/add-course" element={<AddCourse />} />
       </Routes>
     </Router>
-    // <AdminDashboard />
+    // {/* <AdminDashboard /> */}
   );
 };
 

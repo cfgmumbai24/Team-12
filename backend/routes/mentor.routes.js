@@ -16,7 +16,7 @@ router.get("/", getMentor);
 router.get("/getStudents", getStudents);
 router.get("/getLaggingStudents", getLaggingStudents); // to be done
 router.get("/getStudent/:studentId", getStudent); // update from student.routes.js
-router.post("/:test_id/addMarks/:studentId", addMarks); 
+router.post("/:test_id/addMarks", addMarks); 
 router.post("/addTest", addTest);
 
 export default router;

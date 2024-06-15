@@ -1,16 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const GetStudents = () => {
   const [students, setStudents] = useState([]);
 
+  const getStudents = async () => {
+    try {
+      const mentorId = localStorage.getItem("mentorId");
+      // console.log(mentorId);
+      const params = {
+        id: mentorId,
+      }
+      const res = await axios.get("http://localhost:8080/mentor/getStudents", {
+        params,
+      }); 
+      // console.log(res.data);
+      setStudents(res.data.students);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
-    // For demonstration purposes, we use mock data
-    const mockStudents = [
-      { id: 1, name: 'John Doe', detailsExpanded: false, progressExpanded: false, details: { email: 'john.doe@example.com', phone: '123-456-7890' }, progress: { coursePercentage: 85, attendance: '90%', testMarks: 78 } },
-      { id: 2, name: 'Jane Smith', detailsExpanded: false, progressExpanded: false, details: { email: 'jane.smith@example.com', phone: '987-654-3210' }, progress: { coursePercentage: 92, attendance: '95%', testMarks: 84 } },
-      { id: 3, name: 'Michael Brown', detailsExpanded: false, progressExpanded: false, details: { email: 'michael.brown@example.com', phone: '456-789-0123' }, progress: { coursePercentage: 78, attendance: '85%', testMarks: 72 } },
-    ];
-    setStudents(mockStudents);
+    getStudents();
   }, []);
 
   const toggleDetails = (index) => {
@@ -39,10 +51,10 @@ const GetStudents = () => {
         </thead>
         <tbody>
           {students.map((student, index) => (
-            <React.Fragment key={student.id}>
+            <React.Fragment key={student._id}>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px', textAlign: 'left' }}>{student.id}</td>
-                <td style={{ padding: '8px', textAlign: 'left' }}>{student.name}</td>
+                <td style={{ padding: '8px', textAlign: 'left' }}>{student._id}</td>
+                <td style={{ padding: '8px', textAlign: 'left' }}>{student.username}</td>
                 <td style={{ padding: '8px', textAlign: 'left' }}>
                   <button onClick={() => toggleDetails(index)}>
                     {student.detailsExpanded ? 'Hide Details' : 'Show Details'}
