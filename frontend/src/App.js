@@ -7,6 +7,7 @@ import LaggingStudents from './pages/LaggingStudents';
 import UpdateMarks from './pages/UpdateMarks';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
+import Login from './pages/Login';
 import RegisterPage from './pages/RegisterPage';
 import StudentDashboard from './pages/StudentDashboard';
 import StudentHomePage from './pages/StudentHomePage';
@@ -14,6 +15,7 @@ import NewApplicationPage from './pages/NewApplicationPage';
 import ExistingApplicationsPage from './pages/ExistingApplicationsPage';
 import CoursesPage from './pages/CoursesPage';
 import Login from './pages/Login';
+import AdminDashboard from './pages/AdminDashboard';
 
 const App = () => {
   return (
