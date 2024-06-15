@@ -1,41 +1,43 @@
 // UpdateMarks.js
-import React, { useState } from 'react';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import axios from 'axios';
-
+import React, { useState } from "react";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import axios from "axios";
 
 const UpdateMarks = () => {
-  const [studentName, setStudentName] = useState('');
-  const [marks, setMarks] = useState('');
-  const [testId, setTestId] = useState('');
+  const [studentName, setStudentName] = useState("");
+  const [marks, setMarks] = useState("");
+  const [testId, setTestId] = useState("");
 
   const handleUpdateMarks = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:8080/mentor/${testId}/addMarks`, {
-        id: localStorage.getItem('mentorId'),
-        marks: marks,
-        student_name: studentName,
-      })
+      const res = await axios.post(
+        `http://localhost:8080/mentor/${testId}/addMarks`,
+        {
+          id: localStorage.getItem("mentorId"),
+          marks: marks,
+          student_name: studentName,
+        }
+      );
       console.log(res.data);
     } catch (error) {
       console.log(error);
-      setStudentName('');
-      setTestId('');
-      setMarks('');
+      setStudentName("");
+      setTestId("");
+      setMarks("");
     }
   };
 
   return (
     <div>
-      <TextField 
+      <TextField
         label="Test ID"
-        variant='outlined'
+        variant="outlined"
         value={testId}
-        onChange={(e) => setTestId(e.target.value)} 
+        onChange={(e) => setTestId(e.target.value)}
         fullWidth
-        margin='normal'
+        margin="normal"
       />
       <TextField
         label="Student Name"

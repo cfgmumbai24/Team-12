@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../styles/Login.css"; // Import the CSS file for styling
+import "./styles/LoginPage.css"; // Import the CSS file for styling
 
 const Login = () => {
   const [formData, setFormData] = useState({});
@@ -22,6 +22,11 @@ const Login = () => {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    console.log(formData);
   };
 
   return (

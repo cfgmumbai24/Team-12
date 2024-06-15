@@ -1,29 +1,41 @@
-import React, { useState } from 'react';
-import '../styles/Form.css';
-import Layout from '../components/Layout';
+import React, { useState } from "react";
+import "../styles/Form.css";
+import Layout from "../components/Layout";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const AddCourse = () => {
   const [courseDetails, setCourseDetails] = useState({
-    courseName: '',
-    courseMentor: '',
-    totalClasses: '',
-    type: 'UG',
+    courseName: "",
+    course_mentor: "",
+    totalClasses: "",
+    type: "",
   });
+  const navigate = useNavigate();
 
   const handleCourseChange = (e) => {
     const { name, value } = e.target;
     setCourseDetails({ ...courseDetails, [name]: value });
   };
 
-  const handleAddCourse = (e) => {
+  const handleAddCourse = async (e) => {
     e.preventDefault();
     // Add logic to send courseDetails to the backend
-    console.log('Course added:', courseDetails);
+    try {
+      const res = await axios.post("http://localhost:8080/admin/addCourse", {
+        courseDetails,
+      });
+      console.log(res);
+      navigate("/admin/dashboard");
+    } catch (err) {
+      console.log(err);
+    }
+    console.log("Course added:", courseDetails);
   };
 
   return (
     <Layout>
-      <div className='form-container'>
+      <div className="form-container">
         <h2>Add Course</h2>
         <form onSubmit={handleAddCourse}>
           <input
@@ -36,8 +48,8 @@ const AddCourse = () => {
           />
           <input
             type="text"
-            name="courseMentor"
-            value={courseDetails.courseMentor}
+            name="course_mentor"
+            value={courseDetails.course_mentor}
             onChange={handleCourseChange}
             placeholder="Course Mentor (optional)"
           />
@@ -49,17 +61,17 @@ const AddCourse = () => {
             placeholder="Total Classes"
             required
           />
-          <select
+          <input
+            type="text"
             name="type"
             value={courseDetails.type}
             onChange={handleCourseChange}
             required
-          >
-            <option value="UG">UG</option>
-            <option value="PG">PG</option>
-            <option value="global">Global</option>
-          </select>
-          <button type="submit" className="primary">Add Course</button>
+          />
+
+          <button type="submit" className="primary">
+            Add Course
+          </button>
         </form>
       </div>
     </Layout>
