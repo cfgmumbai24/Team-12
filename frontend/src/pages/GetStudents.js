@@ -39,10 +39,10 @@ const GetStudents = () => {
         </thead>
         <tbody>
           {students.map((student, index) => (
-            <React.Fragment key={student.id}>
+            <React.Fragment key={student._id}>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px', textAlign: 'left' }}>{student.id}</td>
-                <td style={{ padding: '8px', textAlign: 'left' }}>{student.name}</td>
+                <td style={{ padding: '8px', textAlign: 'left' }}>{student._id}</td>
+                <td style={{ padding: '8px', textAlign: 'left' }}>{student.username}</td>
                 <td style={{ padding: '8px', textAlign: 'left' }}>
                   <button onClick={() => toggleDetails(index)}>
                     {student.detailsExpanded ? 'Hide Details' : 'Show Details'}
