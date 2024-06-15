@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
+import adminRouter from "./routes/admin.routes.js";
 
 
 const app = express();
@@ -32,6 +33,7 @@ mongoose
   .catch((err) => console.log(err));
 
 // Routes
+app.use("/admin", adminRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);

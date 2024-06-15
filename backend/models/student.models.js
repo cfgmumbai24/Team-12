@@ -5,9 +5,10 @@ const StudentSchema = new mongoose.Schema(
     username: { type: String, unique: true },
     email : String,
     password: String,
-    number : String,
+    phoneNumber : String,
     course: { type: mongoose.Schema.ObjectId, ref: "Course" },
     course_progress: { type: Number }, // video watched
+    test_progress: { type: Number }, // test taken
     mentor: { type: mongoose.Schema.ObjectId, ref: "Mentor" },
     tags: [String],
     class : {
@@ -23,7 +24,7 @@ const StudentSchema = new mongoose.Schema(
             enum : {
                 values : ['Accepted','Pending','Rejected']
             }
-        },
+        },                                        
         scholarship : Boolean
     }],
   },
