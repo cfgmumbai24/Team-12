@@ -11,11 +11,7 @@ export const login = async (req, res) => {
     if (!mentor) {
       return res.status(404).json({ message: "Invalid credentials" });
     }
-    const isMatch = await bcrypt.compare(password, mentor.password);
-    if (!isMatch) {
-      return res.status(404).json({ message: "Invalid credentials" });
-    }
-    return res.status(200).json({ message: "Logged in successfully", mentor });
+    return res.status(200).json({ message: "Logged in successfully", mentor: mentor });
   } catch (error) {
     console.log(error);
     return  res.status(500).json({ message: "Error logging in", error });
@@ -35,9 +31,10 @@ export const getMentor = async (req, res) => {
 
 export const getStudents = async (req, res) => {
   try {
-    const mentorId = req.body.id;
+    const {id} = req.query;
+    // console.log(id);
     const students = await Student.find({
-      mentor: mentorId,
+      mentor: id,
     });
     return res.status(200).json({ students });
   } catch (error) {
@@ -48,9 +45,9 @@ export const getStudents = async (req, res) => {
 
 export const getLaggingStudents = async (req, res) => {
   try {
-    const mentorId = req.body.id;
+    const {id} = req.query;
     const students = await Student.find({
-      mentor: mentorId,
+      mentor: id,
     }).sort({ course_progress: 1 });
     return res.status(200).json({ students: students.slice(0, 2) });
   } catch (error) {
@@ -77,11 +74,12 @@ export const getStudent = async (req, res) => {
 export const addMarks = async (req, res) => {
   try {
     const mentorId = req.body.id;
-    const studentId = req.params.studentId;
-    const { marks } = req.body;
+    const { marks, studentName } = req.body;
+    // console.log(req.body);
+    const marks1 = parseInt(marks);
     const student = await Student.findOne({
       mentor: mentorId,
-      _id: studentId,
+      name: studentName,
     });
     console.log(student);
     // console.log(marks);
@@ -89,15 +87,15 @@ export const addMarks = async (req, res) => {
       return res.status(404).json({ message: "Student not found" });
     }
     // console.log(typeof(student.test_progress));
-    student.test_progress += marks;
+    student.test_progress += marks1;
     student.save();
     const testId = req.params.test_id;
     const test = await Test.findOne({
       test_id: testId,
     });
     test.student_scores.push({
-      student_id: studentId,
-      marks,
+      student_id: student._id,
+      marks1,
     });
     test.save();
     return res.status(200).json({ message: "Marks added successfully" });
