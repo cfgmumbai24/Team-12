@@ -7,7 +7,7 @@ import bcrypt from "bcrypt";
 const login = async (req, res) => {
   try {
     const { username, password } = req.body;
-    
+
     // Find the mentor by username and password
     const mentor = await Mentor.findOne({ username, password });
     if (!mentor) {
@@ -19,24 +19,25 @@ const login = async (req, res) => {
     if (!isMatch) {
       return res.status(404).json({ message: "Invalid credentials" });
     }
-    
+
     res.status(200).json({ message: "Logged in successfully", mentor });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Error logging in", error });
   }
-}
+};
 
 const addMentor = async (req, res) => {
   try {
-    const { username, password, course, tags } = req.body;
+    const { username, password, course, tags } = req.body.mentorDetails;
+    const sepTags = tags.split(',').map(tag=> tag.toLowerCase());
 
     // Create a new mentor instance
     const newMentor = new Mentor({
       username,
       password,
       course,
-      tags,
+      tags : sepTags,
     });
 
     // Save the mentor to the database
@@ -77,26 +78,24 @@ const verifyStudent = async (req, res) => {
 };
 
 const addCourse = async (req, res) => {
+  
   try {
-    const { course_name, course_mentors, total_classes, type } = req.body;
-
-    // Create a new course instance
-    const newCourse = new Course({
-      course_name,
-      course_mentors,
-      total_classes,
-      type,
+    const { courseName, course_mentor, totalClasses, type } = req.body.courseDetails;
+    console.log(course_mentor,courseName,totalClasses,type);
+    const foundCourseMentor = await Mentor.findOne({ username: course_mentor });
+    console.log(foundCourseMentor.password);
+    const newCourse = await Course.create({
+      course_name: courseName,
+      course_mentor: foundCourseMentor._id,
+      total_classes: totalClasses,
+      type : type.toLowerCase(),
     });
-
-    // Save the course to the database
-    await newCourse.save();
-
     res
       .status(201)
       .json({ message: "Course added successfully", course: newCourse });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: "Error adding course", error });
+  } catch (err) {
+    console.log(err);
+    res.status(500);
   }
 };
 
