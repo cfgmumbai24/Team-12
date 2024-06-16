@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const MentorSuggestions = () => {
   const [unmatchedStudents, setUnmatchedStudents] = useState([]);
@@ -8,7 +8,9 @@ const MentorSuggestions = () => {
 
   const getUnmatchedStudents = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/admin/getUnmatchedStudents");
+      const res = await axios.get(
+        "http://localhost:8080/admin/getUnmatchedStudents"
+      );
       console.log(res.data);
       setUnmatchedStudents(res.data.unmatchedStudents);
     } catch (error) {
@@ -22,29 +24,35 @@ const MentorSuggestions = () => {
 
   const handleStudentChange = (event) => {
     const studentId = event.target.value;
-    const student = unmatchedStudents.find(student => student._id === studentId);
+    const student = unmatchedStudents.find(
+      (student) => student._id === studentId
+    );
     setSelectedStudent(student);
   };
 
   const getMentorSuggestions = async (event, studentId) => {
     event.preventDefault(); // Prevent page refresh
     try {
-      const res = await axios.get(`http://localhost:8080/admin/mentorSuggestions/${studentId}`);
+      const res = await axios.get(
+        `http://localhost:8080/admin/mentorSuggestions/${studentId}`
+      );
       setMentorSuggestions(res.data);
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   const handleMatchStudent = async (studentId, mentorId) => {
     try {
-      const res = await axios.put(`http://localhost:8080/admin/matchStudent/${studentId}/${mentorId}`);
+      const res = await axios.put(
+        `http://localhost:8080/admin/matchStudent/${studentId}/${mentorId}`
+      );
       console.log(res.data);
       getUnmatchedStudents();
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
     <div>
@@ -76,13 +84,23 @@ const MentorSuggestions = () => {
               <label>ID: </label>
               <span>{selectedStudent._id}</span>
             </div>
-            <button onClick={(event) => getMentorSuggestions(event, selectedStudent._id)}>Get Mentor Suggestions</button>
+            <button
+              onClick={(event) =>
+                getMentorSuggestions(event, selectedStudent._id)
+              }
+            >
+              Get Mentor Suggestions
+            </button>
           </form>
-          
+
           {mentorSuggestions.map((mentor) => (
             <div key={mentor._id}>
               <h3>{mentor.username}</h3>
-              <button onClick={() => handleMatchStudent(selectedStudent._id, mentor._id)}>
+              <button
+                onClick={() =>
+                  handleMatchStudent(selectedStudent._id, mentor._id)
+                }
+              >
                 Match Student
               </button>
             </div>

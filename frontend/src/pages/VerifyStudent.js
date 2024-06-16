@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const VerifyStudent = () => {
@@ -6,13 +6,15 @@ const VerifyStudent = () => {
 
   const getUnverifiedStudents = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/admin/getUnverifiedStudents");
+      const res = await axios.get(
+        "http://localhost:8080/admin/getUnverifiedStudents"
+      );
       // console.log(res.data.unverifiedStudents);
       setUnverifiedStudents(res.data.unverifiedStudents);
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   const handleVerify = async (id) => {
     try {
@@ -24,7 +26,7 @@ const VerifyStudent = () => {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   useEffect(() => {
     getUnverifiedStudents();
@@ -47,14 +49,16 @@ const VerifyStudent = () => {
               <td>{student.username}</td>
               {/* <td>{student.course}</td>  */}
               <td>
-                <button onClick={() => handleVerify(student._id)}>Verify</button>
+                <button onClick={() => handleVerify(student._id)}>
+                  Verify
+                </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
-  )
-}
+  );
+};
 
-export default VerifyStudent
+export default VerifyStudent;
