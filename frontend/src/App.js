@@ -21,7 +21,6 @@ import AddCourse from './pages/AddCourse';
 import UpdateMarks from './pages/UpdateMarks';
 import LaggingStudents from './pages/LaggingStudents';
 import VerifyStudent from './pages/VerifyStudent';
-import Login from './pages/Login';
 import MentorSuggestions from './pages/MentorSuggestions';
 
 const App = () => {

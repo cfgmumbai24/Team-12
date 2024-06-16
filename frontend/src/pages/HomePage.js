@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/HomePage.css';
 import { Link } from 'react-router-dom';
+import image1 from '../assets/image.png';
 
 const HomePage = () => {
   const [email, setEmail] = useState('');
@@ -62,9 +63,10 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
+      <div className="gradient">
       <header>
         <nav className="navbar">
-          <h1>Eklavya Foundation</h1>
+          <h1>Eklavya India Foundation</h1>
           <div className="nav-buttons">
           <Link to="/student/studentHomePage">
            <button className="btn nav-btn">For Student</button>
@@ -78,9 +80,17 @@ const HomePage = () => {
         </nav>
       </header>
       
-      <div className="intro">
-        Education <br></br>for <br></br>Change <br></br>
+      <br></br>
+      <div className="text-image-container">
+      <div className="text-content">
+        <h1 style={{color: 'rgb(98, 28, 28)', fontSize: '80px'}}>Education <br></br> for <br></br> Change</h1>
+        <p>Empowering individuals through quality education and impactful initiatives.</p>
       </div>
+      <img src={image1} alt='Education for change' />
+      </div>
+
+      </div>
+
       <section className="apply-section">
         <h2>Apply for Mentor</h2>
         <form onSubmit={handleEmailSubmit}>

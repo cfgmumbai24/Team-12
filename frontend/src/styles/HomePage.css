@@ -1,11 +1,11 @@
 .home-page {
     font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: antiquewhite;
+    padding: 2px;
+    
   }
   
   header {
-    background-color: #faa974;
+    background-color: #f8b488;
     padding: 10px 0;
   }
   
@@ -17,7 +17,7 @@
   }
   
   .navbar h1 {
-    color: white;
+    color: rgb(121, 106, 106);
     margin: 0;
   }
   
@@ -28,7 +28,7 @@
   
   .nav-btn {
     background-color: white;
-    color: #f5995c;
+    color:  #f8b488;
     padding: 10px 20px;
     border: 1px solid #4CAF50;
     border-radius: 4px;
@@ -36,8 +36,15 @@
   }
   
   .nav-btn:hover {
-    background-color: #45a049;
+    background-color: #deb887;
     color: white;
+  }
+
+  .tagline{
+    font-size: larger;
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(70, 17, 17);
   }
   
   .apply-section, .workshop-section, .opportunities-section {
@@ -88,7 +95,7 @@
   }
   
   .btn:hover {
-    background-color: #f38028;
+    background-color:  #f8b488;
   }
 
   .intro{
@@ -136,4 +143,26 @@
   .full-description {
     margin-top: 10px;
   }
+
+  .text-image-container {
+    display: flex;
+    align-items: center;
+  }
   
+  .text-content {
+    flex: 1;
+  }
+  
+  .image-content {
+    width: 300px;
+    height: 300px;
+    margin-left: 20px;
+    border-radius: 4px;
+  }
+
+  .gradient{
+    background-color: antiquewhite;
+    background: linear-gradient(to top, #fffacd, #ffebcd, #deb887); /* Light yellow, light orange, light brown */
+  }
+  
+

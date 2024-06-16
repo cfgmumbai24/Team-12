@@ -14,13 +14,14 @@ const RegisterPage = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    navigate('/login');
+    navigate("/student/login");
   };
 
   return (
-    <div className='register-form'>
-      <h1>Register</h1>
-      <form onSubmit={onSubmit}>
+    <div style={{align: 'center'}}>
+    <div className='register-form' style={{alignContent: 'center', align: 'center', marginLeft: '35%'}}>
+      <h1 style={{color: 'rgb(98, 28, 28)'}}>Register</h1>
+      <form onSubmit={onSubmit} style={{marginRight: 2}}>
         <input
           type="username"
           value={username}
@@ -63,8 +64,9 @@ const RegisterPage = () => {
           placeholder="Class"
           required
         />
-        <button type="submit">Register</button>
+        <button type="submit" style={{backgroundColor: 'rgb(98, 28, 28)'}}>Register</button>
       </form>
+    </div>
     </div>
   );
 };
