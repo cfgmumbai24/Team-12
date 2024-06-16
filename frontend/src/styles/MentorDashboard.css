@@ -1,58 +1,61 @@
-/* styles/StudentDashboard.css */
+/* styles/MentorDashboard.css */
 
 /* Updated color palette */
 :root {
-  --peach-light: #FFFBEA;   /* Light peach background */
-  --peach-lighter: #FCF3C6; /* Slightly lighter peach */
-  --peach-lightest: #FAEAA3; /* Even lighter peach */
-  --peach: #F4D95B;         /* Peach color */
-  --peach-dark: #F2D138;     /* Dark peach */
-  --peach-darker: #EFC814;   /* Darker peach */
-}
-
-.mentor-dashboard-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: var(--peach-light); /* Light peach background */
-}
-
-.mentor-dashboard-page h1 {
-  font-size: 3rem;
-  margin-bottom: 2rem;
-  color: #333; /* Dark gray color for the heading */
-}
-
-.mentor-dashboard-page div {
-  display: flex;
-  flex-wrap: wrap; /* Allow items to wrap */
-  gap: 1rem; /* Gap between flex items */
-  margin-bottom: 2rem; /* Bottom margin for spacing */
-}
-
-/* Adjusted button styles for specific buttons */
-.mentor-dashboard-page button {
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  background-color: var(--peach); /* Peach color */
-  color: #fff; /* White text color */
-  border: none;
-  cursor: pointer;
-  border-radius: 5px; /* Rounded corners */
-  transition: background-color 0.3s ease; /* Smooth transition on hover */
-  width: auto; /* Auto width to fit content */
-  max-width: 100%; /* Maximum width of the button */
-  height: 50px; /* Set height for buttons */
-}
-
-/* Specific styling for "Lagging Students" button */
-.mentor-dashboard-page .lagging-students-button {
-  width: 100%; /* Full width within its container */
-  align-self: flex-start; /* Align button to start of container */
-}
-
-.mentor-dashboard-page button:hover {
-  background-color: var(--peach-dark); /* Darker peach on hover */
-}
+    --peach-light: #FFFBEA;   /* Light peach background */
+    --peach-lighter: #FCF3C6; /* Slightly lighter peach */
+    --peach-lightest: #FAEAA3; /* Even lighter peach */
+    --peach: #F4D95B;         /* Peach color */
+    --peach-dark: #F2D138;     /* Dark peach */
+    --peach-darker: #EFC814;   /* Darker peach */
+  }
+  
+  .mentor-dashboard-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--peach-light); /* Light peach background */
+  }
+  
+  .mentor-dashboard-page h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #333; /* Dark gray color for the heading */
+  }
+  
+  .mentor-dashboard-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 1rem; /* Gap between flex items */
+    width: 80%; /* Adjust width to fit laptop screen */
+    max-width: 1200px; /* Maximum width for larger screens */
+    margin-top: 2rem; /* Top margin for spacing */
+  }
+  
+  /* Adjusted button styles for specific buttons */
+  .mentor-dashboard-page button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: var(--peach); /* Peach color */
+    color: #fff; /* White text color */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    width: auto; /* Auto width to fit content */
+    max-width: 100%; /* Maximum width of the button */
+    height: 50px; /* Set height for buttons */
+  }
+  
+  /* Specific styling for "Lagging Students" button */
+  .mentor-dashboard-page .lagging-students-button {
+    width: auto; /* Auto width within its container */
+    max-width: 400px; /* Limit max width to prevent stretching */
+    align-self: flex-start; /* Align button to start of container */
+  }
+  
+  .mentor-dashboard-page button:hover {
+    background-color: var(--peach-dark); /* Darker peach on hover */
+  }

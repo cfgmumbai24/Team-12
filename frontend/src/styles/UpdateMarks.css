@@ -1,0 +1,55 @@
+/* styles/UpdateMarks.css */
+
+:root {
+    --peach-lightest: #FFFBEA; /* Lightest peach */
+    --peach-lighter: #FCF3C6; /* Even lighter peach */
+    --peach-light: #FAEAA3; /* Light peach */
+    --peach: #F4D95B; /* Peach color */
+    --peach-dark: #F2D138; /* Dark peach */
+    --peach-darker: #EFC814; /* Darker peach */
+  }
+  
+  .update-marks-container {
+    margin-top: 2rem;
+    background-color: var(--peach-lightest); /* Lightest peach background */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  
+  .update-marks-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align items to center horizontally */
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .update-marks-input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 16px; /* Adjust font size for better readability */
+    border: 1px solid #ccc; /* Lighter border color */
+    border-radius: 4px;
+    outline: none; /* Remove default outline */
+    width: 100%; /* Full width within parent container */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+  }
+  
+  .update-marks-input:focus {
+    border-color: var(--peach); /* Highlight border on focus with peach color */
+  }
+  
+  .update-marks-button {
+    background-color: var(--peach); /* Peach color for button */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .update-marks-button:hover {
+    background-color: var(--peach-dark); /* Darker peach on hover */
+  }

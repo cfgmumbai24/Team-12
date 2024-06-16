@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Typography from "@mui/material/Typography";
 import axios from "axios";
 
 const LaggingStudents = () => {
@@ -28,8 +27,7 @@ const LaggingStudents = () => {
 
   const toggleDetails = (index) => {
     const updatedStudents = [...laggingStudents];
-    updatedStudents[index].detailsExpanded =
-      !updatedStudents[index].detailsExpanded;
+    updatedStudents[index].detailsExpanded = !updatedStudents[index].detailsExpanded;
     setLaggingStudents(updatedStudents);
   };
 
@@ -55,27 +53,46 @@ const LaggingStudents = () => {
                   {student.username}
                 </td>
                 <td style={{ padding: "8px", textAlign: "left" }}>
-                  <button onClick={() => toggleDetails(index)}>
-                    {student.detailsExpanded
-                      ? "Hide Progress"
-                      : "Show Progress"}
-                  </button>
-                  {student.detailsExpanded && (
-                    <div>
-                      <p>
-                        <strong>Course Percentage:</strong>{" "}
-                        {student.progress.coursePercentage}%
-                      </p>
-                      <p>
-                        <strong>Attendance:</strong>{" "}
-                        {student.progress.attendance}
-                      </p>
-                      <p>
-                        <strong>Test Marks:</strong>{" "}
-                        {student.progress.testMarks}
-                      </p>
-                    </div>
-                  )}
+                  <div className="lagging-students-details">
+                    <button
+                      className={`toggle-details-button ${
+                        student.detailsExpanded ? "hide" : ""
+                      }`}
+                      onClick={() => toggleDetails(index)}
+                      style={{ backgroundColor: "#FFD700", color: "#fff" }} // Yellow color
+                    >
+                      {student.detailsExpanded
+                        ? "Hide Progress"
+                        : "Show Progress"}
+                    </button>
+                    {student.detailsExpanded && (
+                      <div className="lagging-students-progress">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <strong>Course Percentage:</strong>{" "}
+                                {student.course_progress}%
+                              </td>
+                            </tr>
+                            {/* Uncomment if needed */}
+                            {/* <tr>
+                              <td>
+                                <strong>Attendance:</strong>{" "}
+                                {student.attendance}
+                              </td>
+                            </tr> */}
+                            <tr>
+                              <td>
+                                <strong>Test Marks:</strong>{" "}
+                                {student.test_progress}
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    )}
+                  </div>
                 </td>
               </tr>
             </React.Fragment>

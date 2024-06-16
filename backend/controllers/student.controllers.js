@@ -11,7 +11,7 @@ export const register = async (req, res) => {
     password,
     number,
     courseName, // This should be the name of the course
-    class: studentClass,
+    className,
   } = req.body;
 
   try {
@@ -28,7 +28,7 @@ export const register = async (req, res) => {
       password: hashedPassword,
       number,
       course: course._id, // Use the course ID from the found course
-      class: studentClass,
+      class: className,
     });
     await student.save();
     res.status(201).json({ message: "Student registered successfully" });

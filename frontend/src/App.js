@@ -7,7 +7,7 @@ import GetStudents from "./pages/GetStudents";
 // import UpdateMarks from './pages/UpdateMarks';
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
-
+import StudentHomePage from './pages/StudentHomePage';
 import RegisterPage from './pages/RegisterPage';
 import StudentDashboard from './pages/StudentDashboard';
 import NewApplicationPage from './pages/NewApplicationPage';

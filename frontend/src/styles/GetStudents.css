@@ -1,0 +1,53 @@
+/* styles/GetStudents.css */
+
+.students-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+  }
+  
+  .students-table th,
+  .students-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .students-table th {
+    background-color: #F4D95B; /* Light peach color */
+    color: #333; /* Dark gray text color */
+    font-weight: bold;
+  }
+  
+  .details-button,
+  .progress-button {
+    padding: 8px 12px;
+    background-color: #EFC814; /* Darker peach color */
+    color: #fff; /* White text color */
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .details-button:hover,
+  .progress-button:hover {
+    background-color: #F2D138; /* Peach color on hover */
+  }
+  
+  .details-container,
+  .progress-container {
+    margin-top: 8px;
+    padding: 8px;
+    background-color: #FCF3C6; /* Lighter peach color */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .progress-container {
+    margin-top: 8px;
+    padding: 8px;
+    background-color: #FAEAA3; /* Even lighter peach color */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }

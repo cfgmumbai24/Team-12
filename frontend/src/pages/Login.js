@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./styles/LoginPage.css"; // Import the CSS file for styling
+import "../styles/LoginPage.css"; // Import the CSS file for styling
 
 const Login = () => {
   const [formData, setFormData] = useState({});

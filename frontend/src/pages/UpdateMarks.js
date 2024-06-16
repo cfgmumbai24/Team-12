@@ -1,63 +1,67 @@
-// UpdateMarks.js
-import React, { useState } from "react";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import axios from "axios";
+import React, { useState } from 'react';
+import axios from 'axios';
+import '../styles/UpdateMarks.css'; // Import the CSS file for styling
 
 const UpdateMarks = () => {
-  const [studentName, setStudentName] = useState("");
-  const [marks, setMarks] = useState("");
-  const [testId, setTestId] = useState("");
+  const [studentName, setStudentName] = useState('');
+  const [marks, setMarks] = useState('');
+  const [testId, setTestId] = useState('');
+
+  // const handleMarksUpdate = (e) => {
+  //   e.preventDefault();
+  //   alert('Marks updated successfully!');
+  // };
 
   const handleUpdateMarks = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        `http://localhost:8080/mentor/${testId}/addMarks`,
-        {
-          id: localStorage.getItem("mentorId"),
-          marks: marks,
-          student_name: studentName,
-        }
-      );
+      const res = await axios.post("http://localhost:8080/mentor/${testId}/addMarks", {
+        id: localStorage.getItem('mentorId'),
+        marks: marks,
+        student_name: studentName,
+      });
       console.log(res.data);
+      // Clear input fields after successful update
+      setStudentName('');
+      setTestId('');
+      setMarks('');
     } catch (error) {
       console.log(error);
-      setStudentName("");
-      setTestId("");
-      setMarks("");
     }
   };
 
   return (
-    <div>
-      <TextField
-        label="Test ID"
-        variant="outlined"
-        value={testId}
-        onChange={(e) => setTestId(e.target.value)}
-        fullWidth
-        margin="normal"
-      />
-      <TextField
-        label="Student Name"
-        variant="outlined"
-        value={studentName}
-        onChange={(e) => setStudentName(e.target.value)}
-        fullWidth
-        margin="normal"
-      />
-      <TextField
-        label="Marks"
-        variant="outlined"
-        value={marks}
-        onChange={(e) => setMarks(e.target.value)}
-        fullWidth
-        margin="normal"
-      />
-      <Button variant="contained" color="primary" onClick={handleUpdateMarks}>
-        Update Marks
-      </Button>
+    <div className="update-marks-container">
+      <h4>Update Marks</h4>
+      <form className="update-marks-form">
+        <input
+          className="update-marks-input"
+          type="text"
+          placeholder="Test ID"
+          value={testId}
+          onChange={(e) => setTestId(e.target.value)}
+          required
+        />
+        <input
+          className="update-marks-input"
+          type="text"
+          placeholder="Student Name"
+          value={studentName}
+          onChange={(e) => setStudentName(e.target.value)}
+          required
+        />
+        <input
+          className="update-marks-input"
+          type="number"
+          placeholder="Marks"
+          value={marks}
+          onChange={(e) => setMarks(e.target.value)}
+          required
+        />
+        <button className="update-marks-button" onClick={handleUpdateMarks}>
+          Update Marks
+        </button>
+      </form>
     </div>
   );
 };

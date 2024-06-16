@@ -1,0 +1,58 @@
+/* styles/LaggingStudents.css */
+
+.lagging-students-container {
+    margin-top: 2rem;
+  }
+  
+  .lagging-students-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .lagging-students-table th,
+  .lagging-students-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .lagging-students-table th {
+    font-weight: bold;
+  }
+  
+  .lagging-students-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .toggle-details-button {
+    padding: 8px 16px;
+    background-color: #007bff; /* Example primary color */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle-details-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  .toggle-details-button.hide {
+    background-color: #dc3545; /* Red for hide button */
+  }
+  
+  .toggle-details-button.hide:hover {
+    background-color: #c82333; /* Darker red on hover */
+  }
+  
+  .lagging-students-progress {
+    margin-top: 0.5rem;
+  }
+  
+  .lagging-students-progress p {
+    margin-bottom: 0.5rem;
+    color: #333; /* Example text color */
+  }
