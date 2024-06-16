@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/RegisterPage.css";
 import axios from "axios";
+
 const RegisterPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,7 +20,7 @@ const RegisterPage = () => {
       password,
       username,
       number,
-      courseName, // This should be the name of the course
+      courseName,
       className,
     });
     navigate("/student/login");
@@ -33,7 +34,7 @@ const RegisterPage = () => {
       <h1 style={{color: 'rgb(98, 28, 28)'}}>Register</h1>
       <form onSubmit={onSubmit} style={{marginRight: 2}}>
         <input
-          type="username"
+          type="text"
           value={username}
           onChange={(e) => setUserName(e.target.value)}
           placeholder="Username"
@@ -54,27 +55,29 @@ const RegisterPage = () => {
           required
         />
         <input
-          type="number"
+          type="text"
           value={number}
           onChange={(e) => setNumber(e.target.value)}
           placeholder="Number"
           required
         />
         <input
-          type="courseName"
+          type="text"
           value={courseName}
           onChange={(e) => setCourseName(e.target.value)}
           placeholder="Course Name"
           required
         />
         <input
-          type="class"
+          type="text"
           value={className}
           onChange={(e) => setClassName(e.target.value)}
           placeholder="Class"
           required
         />
-        <button type="submit" style={{backgroundColor: 'rgb(98, 28, 28)'}}>Register</button>
+        <button type="submit" style={{ backgroundColor: "rgb(98, 28, 28)" }}>
+          Register
+        </button>
       </form>
     </div>
     </div>

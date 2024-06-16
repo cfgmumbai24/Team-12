@@ -1,168 +1,286 @@
 .home-page {
-    font-family: Arial, sans-serif;
-    padding: 2px;
-    
-  }
-  
-  header {
-    background-color: #f8b488;
-    padding: 10px 0;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-  }
-  
-  .navbar h1 {
-    color: rgb(121, 106, 106);
-    margin: 0;
-  }
-  
-  .nav-buttons {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .nav-btn {
-    background-color: white;
-    color:  #f8b488;
-    padding: 10px 20px;
-    border: 1px solid #4CAF50;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .nav-btn:hover {
-    background-color: #deb887;
-    color: white;
-  }
+  font-family: Arial, sans-serif;
+  padding: 2px;
+}
 
-  .tagline{
-    font-size: larger;
-    font-style: italic;
-    font-weight: bold;
-    color: rgb(70, 17, 17);
-  }
-  
-  .apply-section, .workshop-section, .opportunities-section {
-    margin: 20px 0;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #f9f9f9;
-  }
-  
-  .apply-section h2, .workshop-section h2, .opportunities-section h2 {
-    margin-top: 0;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input[type="email"],
-  .form-group input[type="text"],
-  .form-group textarea {
-    width: 100%;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  textarea {
-    resize: vertical;
-    height: 100px;
-  }
-  
-  .btn {
-    background-color: rgb(98, 28, 28);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .btn:hover {
-    background-color:  #f8b488;
-  }
+header {
+  background-color: #f8b488;
+  padding: 10px 0;
+}
 
-  .intro{
-    font-size: 100px;
-    color: rgb(98, 28, 28);
-  }
-  
-  .workshops {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .workshop {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .opportunities {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .opportunity {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: white;
-  }
-  
-  .opportunity h3 {
-    margin-top: 0;
-  }
-  
-  .opportunity p {
-    margin-bottom: 10px;
-  }
-  
-  .full-description {
-    margin-top: 10px;
-  }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
 
-  .text-image-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .text-content {
-    flex: 1;
-  }
-  
-  .image-content {
-    width: 300px;
-    height: 300px;
-    margin-left: 20px;
-    border-radius: 4px;
-  }
+.navbar h1 {
+  color: rgb(121, 106, 106);
+  margin: 0;
+}
 
-  .gradient{
-    background-color: antiquewhite;
-    background: linear-gradient(to top, #fffacd, #ffebcd, #deb887); /* Light yellow, light orange, light brown */
-  }
-  
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
 
+.nav-btn {
+  background-color: white;
+  color: #f8b488;
+  padding: 10px 20px;
+  border: 1px solid #4caf50;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background-color: #deb887;
+  color: white;
+}
+
+.tagline {
+  font-size: larger;
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(70, 17, 17);
+}
+
+.apply-section,
+.workshop-section,
+.opportunities-section {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.apply-section h2,
+.workshop-section h2,
+.opportunities-section h2 {
+  margin-top: 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="email"],
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.btn {
+  background-color: rgb(98, 28, 28);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #f8b488;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #faa974;
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.navbar h1 {
+  color: white;
+  margin: 0;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-btn {
+  background-color: white;
+  color: #f5995c;
+  padding: 10px 20px;
+  border: 1px solid #4caf50;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background-color: #45a049;
+  color: white;
+}
+
+.apply-section,
+.workshop-section,
+.opportunities-section {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.apply-section h2,
+.workshop-section h2,
+.opportunities-section h2 {
+  margin-top: 0;
+}
+
+.container {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="email"],
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.btn {
+  background-color: rgb(98, 28, 28);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #f38028;
+}
+
+.intro {
+  font-size: 100px;
+  color: rgb(98, 28, 28);
+  font-weight: 700;
+  font-family: "Inria Serif", Sans-serif;
+  letter-spacing: 0.2rem;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  iframe {
+    width: 500px;
+    height: 270px;
+  }
+}
+
+.workshops {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.workshop {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.opportunities {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.opportunity {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.opportunity h3 {
+  margin-top: 0;
+}
+
+.opportunity p {
+  margin-bottom: 10px;
+}
+
+.full-description {
+  margin-top: 10px;
+}
+
+.text-image-container {
+  display: flex;
+  align-items: center;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.image-content {
+  width: 300px;
+  height: 300px;
+  margin-left: 20px;
+  border-radius: 4px;
+}
+
+.gradient {
+  background-color: antiquewhite;
+  background: linear-gradient(
+    to top,
+    #fffacd,
+    #ffebcd,
+    #deb887
+  ); /* Light yellow, light orange, light brown */
+}

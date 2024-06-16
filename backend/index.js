@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import adminRouter from "./routes/admin.routes.js";
 import mentorRoutes from "./routes/mentor.routes.js";
 import studentRoutes from "./routes/student.routes.js";
+import contactRoutes from "./routes/contact.routes.js";
 const app = express();
 dotenv.config();
 
@@ -43,6 +44,7 @@ mongoose
 app.use("/admin", adminRouter);
 app.use("/mentor", mentorRoutes);
 app.use("/student", studentRoutes);
+app.use("/contact", contactRoutes);
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
 });
