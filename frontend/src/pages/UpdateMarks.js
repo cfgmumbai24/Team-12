@@ -7,20 +7,17 @@ const UpdateMarks = () => {
   const [marks, setMarks] = useState('');
   const [testId, setTestId] = useState('');
 
-  // const handleMarksUpdate = (e) => {
-  //   e.preventDefault();
-  //   alert('Marks updated successfully!');
-  // };
 
   const handleUpdateMarks = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8080/mentor/${testId}/addMarks", {
+      const res = await axios.post(`http://localhost:8080/mentor/${testId}/addMarks`, {
         id: localStorage.getItem('mentorId'),
         marks: marks,
         student_name: studentName,
       });
       console.log(res.data);
+      alert('Marks updated successfully!');
       // Clear input fields after successful update
       setStudentName('');
       setTestId('');

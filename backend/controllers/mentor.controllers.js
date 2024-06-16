@@ -95,7 +95,7 @@ export const addMarks = async (req, res) => {
     });
     test.student_scores.push({
       student_id: student._id,
-      marks1,
+      student_mark: marks1,
     });
     test.save();
     return res.status(200).json({ message: "Marks added successfully" });
